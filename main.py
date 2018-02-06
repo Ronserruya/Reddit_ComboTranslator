@@ -137,8 +137,7 @@ def run_bot(r,startTime):
             if len(combo) > 0:
                 output += textToComboPS(combo) + '  \n'
 
-        #replyToComment(comment,output)
-        print (output + '\n '+ comment.id)
+        replyToComment(comment,output)
 
 
 
