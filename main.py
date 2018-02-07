@@ -32,8 +32,8 @@ def getRelevantComments(r,startTime):
 
 def replyToComment(comment,msg):
     commentFormat = '\n\n ______________________________________ \n\n' \
-                    '^(I AM A BOT, use {combo} to call me. Mistake? Please PM me!)  \n' \
-                    '[Dont rely on me, learn to read combos! :)]' \
+                    '^(I AM A BOT, use {combo} to call me. Im still new and may be wrong, mistake? Please PM me!)  \n' \
+                    '[Don\'t rely on me, learn to read combos! :)]' \
                     '(https://www.reddit.com/r/dragonballfighterz/comments/7lagry/diggys_dojo_basic_mechanics_controls_and_notations/)  \n' \
                     '[Source Code](https://github.com/Ronserruya/Reddit_ComboTranslator)'
     try:
@@ -48,7 +48,7 @@ def reportError(r,e):
 
 def textToComboXbox(text):
     dictonary = {
-        ' ': '',
+        ' ': ' ',
         ',': ',',
         '1': '↙',
         '2': '↓',
@@ -82,7 +82,7 @@ def textToComboXbox(text):
 
 def textToComboPS(text):
     dictonary = {
-        ' ': '',
+        ' ': ' ',
         ',': ',',
         '1': '↙',
         '2': '↓',
@@ -117,7 +117,6 @@ def textToComboPS(text):
 def run_bot(r,startTime):
     relevantComments,startTime = getRelevantComments(r,startTime)
     if len(relevantComments) == 0:
-        #print 'No relevant comments'
         return startTime
 
     for comment in relevantComments:
@@ -153,7 +152,6 @@ def main():
         while True:
             # startTime gets the last time I went over the comments
             startTime = run_bot(r, startTime)
-            # print "Waiting for 30 seconds"
             time.sleep(30)
     except Exception as e:
         reportError(r,e)
