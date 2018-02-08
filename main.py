@@ -49,7 +49,7 @@ def reportError(r,e):
 def textToComboXbox(text):
     dictonary = {
         ' ': ' ',
-        ',': ',',
+        ',': '>',
         '1': '↙',
         '2': '↓',
         '3': '↘',
@@ -64,18 +64,25 @@ def textToComboXbox(text):
         's': 'A',
         'm': 'Y',
         'j': '↑',
+        'w': 'wait',
+        'L': 'land',
         'D': 'dash',
         'A': 'assist',
         'r': 'RB',
         'R': 'RT',
         'v': 'vanish',
-        '>': ','
+        '>': '>'
     }
     combo = ''
-    text = text.replace('dash','D').replace('vanish','v').replace('assist','A').replace('lm','r').replace('ml','r').replace('sh','R')\
+
+    # Replace common phrases with matching characters
+    text = text.replace('dash','D').replace('vanish','v').replace('assist','A').replace('sd','D')\
+        .replace('jump','j').replace('land','L').replace('wait','w').replace('lm','r').replace('ml','r').replace('sh','R')\
         .replace('hs','R').replace('mh','v').replace('hm','v').replace('a','A').replace('j.','')
+
+    # Go over each character and translate it using the dictionary above
     for char in text:
-        combo += dictonary.get(char,'?')
+        combo += dictonary.get(char,char)
 
     combo = combo.replace('↓↘→','↺').replace('↓↙←','↻')
     return combo
@@ -83,7 +90,7 @@ def textToComboXbox(text):
 def textToComboPS(text):
     dictonary = {
         ' ': ' ',
-        ',': ',',
+        ',': '>',
         '1': '↙',
         '2': '↓',
         '3': '↘',
@@ -98,18 +105,25 @@ def textToComboPS(text):
         's': '×',
         'm': '△',
         'j': '↑',
+        'w': 'wait',
+        'L': 'land',
         'D': 'dash',
         'A': 'assist',
         'r': 'R1',
         'R': 'R2',
         'v': 'vanish',
-        '>': ','
+        '>': '>'
     }
     combo = ''
-    text = text.replace('dash','D').replace('vanish','v').replace('assist','A').replace('lm','r').replace('ml','r').replace('sh','R')\
+
+    # Replace common phrases with matching characters
+    text = text.replace('dash','D').replace('vanish','v').replace('assist','A').replace('sd','D')\
+        .replace('jump','j').replace('land','L').replace('wait','w').replace('lm','r').replace('ml','r').replace('sh','R')\
         .replace('hs','R').replace('mh','v').replace('hm','v').replace('a','A').replace('j.','')
+
+    # Go over each character and translate it using the dictionary above
     for char in text:
-        combo += dictonary.get(char,'?')
+        combo += dictonary.get(char,char)
 
     combo = combo.replace('↓↘→','↺').replace('↓↙←','↻')
     return combo
@@ -129,19 +143,16 @@ def run_bot(r,startTime):
         output += 'Xbox:  \n'
         for combo in combos:
             if len(combo) > 0:
-                output += textToComboXbox(combo) + '  \n'
+                output += textToComboXbox(combo.lower()) + '  \n'
 
         output += '  \nPS:  \n'
         for combo in combos:
             if len(combo) > 0:
-                output += textToComboPS(combo) + '  \n'
+                output += textToComboPS(combo.lower()) + '  \n'
 
         replyToComment(comment,output)
 
-
-
     return startTime
-
 
 
 
