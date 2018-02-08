@@ -64,6 +64,8 @@ def textToComboXbox(text):
         's': 'A',
         'm': 'Y',
         'j': '↑',
+        'w': 'wait',
+        'L': 'land',
         'D': 'dash',
         'A': 'assist',
         'r': 'RB',
@@ -75,7 +77,7 @@ def textToComboXbox(text):
 
     # Replace common phrases with matching characters
     text = text.replace('dash','D').replace('vanish','v').replace('assist','A').replace('sd','D')\
-        .replace('jump','j').replace('land','').replace('lm','r').replace('ml','r').replace('sh','R')\
+        .replace('jump','j').replace('land','L').replace('wait','w').replace('lm','r').replace('ml','r').replace('sh','R')\
         .replace('hs','R').replace('mh','v').replace('hm','v').replace('a','A').replace('j.','')
 
     # Go over each character and translate it using the dictionary above
@@ -103,6 +105,8 @@ def textToComboPS(text):
         's': '×',
         'm': '△',
         'j': '↑',
+        'w': 'wait',
+        'L': 'land',
         'D': 'dash',
         'A': 'assist',
         'r': 'R1',
@@ -114,7 +118,7 @@ def textToComboPS(text):
 
     # Replace common phrases with matching characters
     text = text.replace('dash','D').replace('vanish','v').replace('assist','A').replace('sd','D')\
-        .replace('jump','j').replace('land','').replace('lm','r').replace('ml','r').replace('sh','R')\
+        .replace('jump','j').replace('land','L').replace('wait','w').replace('lm','r').replace('ml','r').replace('sh','R')\
         .replace('hs','R').replace('mh','v').replace('hm','v').replace('a','A').replace('j.','')
 
     # Go over each character and translate it using the dictionary above
