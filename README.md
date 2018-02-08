@@ -21,4 +21,4 @@ On the subbreddit [/r/dragonballfighterz](https://www.reddit.com/r/dragonballfig
 
 ## Screenshots
 
-![alt text](Screenshots/combo.png)
+![alt text](/combo.png)
