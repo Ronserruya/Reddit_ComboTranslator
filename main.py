@@ -90,7 +90,7 @@ def textToComboXbox(text):
 def textToComboPS(text):
     dictonary = {
         ' ': ' ',
-        ',': ',',
+        ',': '>',
         '1': '↙',
         '2': '↓',
         '3': '↘',
@@ -112,7 +112,7 @@ def textToComboPS(text):
         'r': 'R1',
         'R': 'R2',
         'v': 'vanish',
-        '>': ','
+        '>': '>'
     }
     combo = ''
 
