@@ -19,4 +19,6 @@ On the subbreddit [/r/dragonballfighterz](https://www.reddit.com/r/dragonballfig
 
 * **Ron Serruya** - *Initial work* - [Ronserruya](https://github.com/Ronserruya)
 
+## Screenshots
 
+![alt text](Screenshots/combo.png)
